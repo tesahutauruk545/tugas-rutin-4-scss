@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+main {
+  width: min(1100px, 90%);
+  margin: $spacing-8xl auto;
+}
+
+section,
+aside {
+  margin-bottom: $spacing-9xl;
+}

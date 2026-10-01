@@ -1,0 +1,98 @@
+// ============================================
+// IMPORT VARIABEL (WAJIB DI BARIS PERTAMA)
+// ============================================
+@use 'variables' as *;
+
+// ============================================
+// MIXIN 1: Section Heading dengan Garis Bawah
+// ============================================
+@mixin section-heading {
+  font-family: $font-secondary;
+  font-size: $font-size-2xl;
+  font-weight: 600;
+  color: $color-primary;
+  margin-bottom: $spacing-3xl;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background-color: $color-teal-lighter;
+    margin-top: $spacing-sm;
+  }
+}
+
+// ============================================
+// MIXIN 2: Card Component
+// ============================================
+@mixin card($padding: $spacing-4xl, $hover: false) {
+  background-color: $color-white;
+  border: 1px solid $color-gray-light;
+  padding: $padding;
+
+  @if $hover {
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// ============================================
+// MIXIN 3: Flexbox Center
+// ============================================
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// ============================================
+// MIXIN 4: Responsive Breakpoint
+// ============================================
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) { @content; }
+  }
+  @if $breakpoint == mobile {
+    @media (max-width: 700px) { @content; }
+  }
+  @if $breakpoint == mobile-small {
+    @media (max-width: 380px) { @content; }
+  }
+}
+
+// ============================================
+// MIXIN 5: Article Card
+// ============================================
+@mixin article-card {
+  background-color: $color-white;
+  padding: 27px 30px;
+  margin-bottom: $spacing-lg;
+  border-left: 4px solid $color-teal-lighter;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-family: $font-secondary;
+    color: $color-primary-dark;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: #5e5e5e;
+    font-size: $font-size-base;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

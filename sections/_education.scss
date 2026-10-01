@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+#pendidikan {
+  background-color: $color-teal-bg-light;
+  padding: $spacing-7xl;
+
+  article {
+    @include article-card;
+  }
+}

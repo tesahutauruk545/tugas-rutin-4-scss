@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+#keahlian {
+  text-align: center;
+
+  h2 {
+    @include section-heading;
+
+    &::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  ul {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    list-style: none;
+  }
+
+  li {
+    background-color: $color-teal-bg;
+    color: #405960;
+    padding: 9px 18px;
+    border-radius: $radius-xl;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+aside {
+  background-color: $color-teal-bg-lighter;
+  padding: $spacing-7xl;
+
+  h2 {
+    @include section-heading;
+  }
+
+  p {
+    max-width: 850px;
+    color: #526066;
+    font-size: $font-size-md;
+    margin-bottom: $spacing-xl;
+
+    &:last-child {
+      margin-bottom: 0;
+      color: $color-primary-dark;
+      font-weight: 600;
+    }
+  }
+}

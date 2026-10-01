@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+#pengalaman {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+
+  h2 {
+    grid-column: 1 / -1;
+    @include section-heading;
+  }
+
+  article {
+    @include card($padding: $spacing-4xl, $hover: true);
+  }
+}

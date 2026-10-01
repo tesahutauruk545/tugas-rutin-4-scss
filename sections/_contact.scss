@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+#kontak {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  > p {
+    color: #666666;
+    margin-bottom: $spacing-xl + 5;
+  }
+}
+
+form {
+  background-color: $color-white;
+  border: 1px solid $color-gray-light;
+  padding: 35px;
+
+  p {
+    margin-bottom: $spacing-xl;
+  }
+
+  label {
+    display: block;
+    color: #3d4c51;
+    font-size: $font-size-base;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid $color-gray-medium;
+    border-radius: $radius-sm;
+    background-color: $color-off-white;
+    color: $color-text;
+    font-family: inherit;
+    font-size: $font-size-base;
+    outline: none;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+
+  input[type="color"] {
+    width: 55px;
+    height: 40px;
+    padding: 3px;
+    border: 1px solid #dddddd;
+    background-color: $color-white;
+    cursor: pointer;
+  }
+
+  textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+}
